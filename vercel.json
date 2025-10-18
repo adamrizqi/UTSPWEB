@@ -1,12 +1,15 @@
 {
   "version": 2,
   "builds": [
-    { "src": "public/index.php", "use": "vercel-php" }
+    {
+      "src": "public/index.php",
+      "use": "vercel-php"
+    }
   ],
   "routes": [
     {
-      "src": "/(.*\\.(css|js|png|jpg|jpeg|gif|svg|ico))",
-      "dest": "/public/$1"
+      "src": "/(css|js)/(.*)",
+      "dest": "/public/$1/$2"
     },
     {
       "src": "/(.*)",
