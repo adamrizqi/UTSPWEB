@@ -3,7 +3,7 @@ $modeEdit = isset($dataSiswa);
 $judulHalaman = $modeEdit ? 'Edit Data Siswa' : 'Tambah Siswa Baru';
 $actionForm = $modeEdit ? 'index.php?controller=siswa&action=perbarui' : 'index.php?controller=siswa&action=simpan';
 
-require_once '../app/views/layouts/header.php'; 
+require_once BASE_PATH . '/app/views/layouts/header.php'; 
 ?>
 
 <h1 class="mb-4"><?php echo $judulHalaman; ?></h1>
@@ -85,4 +85,4 @@ require_once '../app/views/layouts/header.php';
     </div>
 </div>
 
-<?php require_once '../app/views/layouts/footer.php'; ?>
+<?php require_once BASE_PATH . '/app/views/layouts/footer.php'; ?>

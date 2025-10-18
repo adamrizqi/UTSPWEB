@@ -18,7 +18,6 @@ function buatKoneksiDb() {
     try {
         $pdo = new PDO($dsn, DB_USER, DB_PASS);
         
-        // Opsi ini penting untuk menampilkan error SQL
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         
         return $pdo;

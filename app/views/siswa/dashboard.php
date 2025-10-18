@@ -1,4 +1,4 @@
-<?php require_once '../app/views/layouts/header.php'; ?>
+<?php require_once BASE_PATH . '/app/views/layouts/header.php'; ?>
 
 <h1 class="mb-4">Dashboard</h1>
 
@@ -41,7 +41,7 @@
     .text-gray-300 { color: #dddfeb !important; }
 </style>
 
-<?php require_once '../app/views/layouts/footer.php'; ?>
+<?php require_once BASE_PATH . '/app/views/layouts/footer.php'; ?>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>

@@ -1,4 +1,4 @@
-<?php require_once '../app/views/layouts/header.php'; ?>
+<?php require_once BASE_PATH . '/app/views/layouts/header.php'; ?>
 
 <h1 class="mb-4">Profil Pengguna</h1>
 
@@ -52,4 +52,4 @@
     </div>
 </form>
 
-<?php require_once '../app/views/layouts/footer.php'; ?>
+<?php require_once BASE_PATH . '/app/views/layouts/footer.php'; ?>

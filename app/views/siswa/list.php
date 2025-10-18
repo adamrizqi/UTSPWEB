@@ -1,7 +1,6 @@
 <?php 
-require_once '../app/views/layouts/header.php';
+require_once BASE_PATH . '/app/views/layouts/header.php';
 
-// Helper untuk membangun URL paginasi agar tidak berulang
 $basePaginationUrl = 'index.php?' . http_build_query([
     'controller' => 'siswa',
     'action' => 'daftar',
@@ -109,4 +108,4 @@ $basePaginationUrl = 'index.php?' . http_build_query([
     </div>
 </div>
 
-<?php require_once '../app/views/layouts/footer.php'; ?>
+<?php require_once BASE_PATH . '/app/views/layouts/footer.php'; ?>
