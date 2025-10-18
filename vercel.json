@@ -1,7 +1,26 @@
 {
-  "rewrites": [
-    { "source": "/", "destination": "/api/index.php" },
-    { "source": "/index.php", "destination": "/api/index.php" },
-    { "source": "/(.*)", "destination": "/api/index.php" }
+  "version": 2,
+  "functions": {
+    "api/index.php": {
+      "runtime": "vercel-php@0.6.0"
+    }
+  },
+  "routes": [
+    {
+      "src": "/css/(.*)",
+      "dest": "/css/$1"
+    },
+    {
+      "src": "/js/(.*)",
+      "dest": "/js/$1"
+    },
+    {
+      "src": "/favicon.ico",
+      "status": 204
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/api/index.php"
+    }
   ]
 }

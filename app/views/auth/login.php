@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css"> 
+    <link rel="stylesheet" href="/css/style.css"> 
 </head>
 <body>
 
@@ -23,7 +23,7 @@
                         <small>ALREADY MEMBERS</small>
                     </div>
                     
-                    <form id="login-form" action="index.php?controller=auth&action=prosesLogin" method="POST">
+                    <form id="login-form" action="?controller=auth&action=prosesLogin" method="POST">
                         <div class="mb-3">
                             <input type="text" class="form-control" id="username" name="username" placeholder="Username" required>
                         </div>
@@ -39,14 +39,14 @@
             
             <div class="text-center mt-3 auth-link"> 
                 <small>Don't have an account yet?</small>
-                <a href="index.php?controller=auth&action=formRegister">Create an account</a>
+                <a href="?controller=auth&action=formRegister">Create an account</a>
             </div>
         </div>
     </div>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script src="js/app.js"></script>
+<script src="/js/app.js"></script>
 <?php displayFlashMessage(); ?>
 
 </body>

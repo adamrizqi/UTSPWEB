@@ -1,7 +1,7 @@
 <?php 
 $modeEdit = isset($dataSiswa);
 $judulHalaman = $modeEdit ? 'Edit Data Siswa' : 'Tambah Siswa Baru';
-$actionForm = $modeEdit ? 'index.php?controller=siswa&action=perbarui' : 'index.php?controller=siswa&action=simpan';
+$actionForm = $modeEdit ? '?controller=siswa&action=perbarui' : '?controller=siswa&action=simpan';
 
 require_once BASE_PATH . '/app/views/layouts/header.php'; 
 ?>
@@ -74,7 +74,7 @@ require_once BASE_PATH . '/app/views/layouts/header.php';
             <hr class="my-4">
 
             <div class="d-flex justify-content-end">
-                <a href="index.php?controller=siswa&action=daftar" class="btn btn-secondary me-2">
+                <a href="?controller=siswa&action=daftar" class="btn btn-secondary me-2">
                     <i class="bi bi-x-circle"></i> Batal
                 </a>
                 <button type="submit" class="btn btn-primary fw-bold">
