@@ -2,7 +2,7 @@
 
 <h1 class="mb-4">Profil Pengguna</h1>
 
-<form id="profile-form" action="index.php?controller=auth&action=updateProfile" method="POST">
+<form id="profile-form" action="?controller=auth&action=updateProfile" method="POST">
     <div class="row">
         <div class="col-lg-6">
             <div class="card shadow-sm mb-4">

@@ -5,7 +5,7 @@ class SiswaController {
 
     public function __construct() {
         if (!isset($_SESSION['user_id'])) {
-            $this->redirect('index.php?controller=auth&action=formLogin');
+            $this->redirect('?controller=auth&action=formLogin');
         }
         $this->modelSiswa = new SiswaModel();
     }
@@ -62,7 +62,7 @@ class SiswaController {
                 'success', 
                 'Berhasil!', 
                 'Data siswa baru telah ditambahkan.', 
-                'index.php?controller=siswa&action=daftar'
+                '?controller=siswa&action=daftar'
             );
         }
     }
@@ -85,7 +85,7 @@ class SiswaController {
                 'success', 
                 'Berhasil!', 
                 'Data siswa telah diperbarui.', 
-                'index.php?controller=siswa&action=daftar'
+                '?controller=siswa&action=daftar'
             );
         }
     }
@@ -98,7 +98,7 @@ class SiswaController {
             'success', 
             'Berhasil!', 
             'Data siswa telah dihapus.', 
-            'index.php?controller=siswa&action=daftar'
+            '?controller=siswa&action=daftar'
         );
     }
 
@@ -113,7 +113,7 @@ class SiswaController {
 
     private function setFlashAndRedirect($type, $title, $text, $redirectUrl) {
         setRedirectFlashMessage($type, $title, $text, $redirectUrl);
-        $this->redirect('index.php?controller=siswa&action=showMessage');
+        $this->redirect('?controller=siswa&action=showMessage');
     }
 
     private function uploadFotoViaApi() {

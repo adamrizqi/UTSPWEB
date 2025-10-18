@@ -1,7 +1,7 @@
 <?php 
 require_once BASE_PATH . '/app/views/layouts/header.php';
 
-$basePaginationUrl = 'index.php?' . http_build_query([
+$basePaginationUrl = '?' . http_build_query([
     'controller' => 'siswa',
     'action' => 'daftar',
     'kelas' => $kelasTerpilih,
@@ -15,12 +15,12 @@ $basePaginationUrl = 'index.php?' . http_build_query([
     <div class="card-body">
         <div class="row mb-3">
             <div class="col-md-4 mb-2">
-                <a href="index.php?controller=siswa&action=formTambah" class="btn btn-success">
+                <a href="?controller=siswa&action=formTambah" class="btn btn-success">
                     <i class="bi bi-plus-circle-fill"></i> Tambah Data Siswa
                 </a>
             </div>
             <div class="col-md-8">
-                <form action="index.php" method="GET" class="d-flex justify-content-md-end gap-2">
+                <form action="" method="GET" class="d-flex justify-content-md-end gap-2">
                     <input type="hidden" name="controller" value="siswa">
                     <input type="hidden" name="action" value="daftar">
                     
@@ -72,10 +72,10 @@ $basePaginationUrl = 'index.php?' . http_build_query([
                             <td><?php echo $item['nama_lengkap']; ?></td>
                             <td><?php echo $item['kelas']; ?></td>
                             <td class="text-center">
-                                <a href="index.php?controller=siswa&action=formEdit&id=<?php echo $item['id']; ?>" class="btn btn-warning btn-sm">
+                                <a href="?controller=siswa&action=formEdit&id=<?php echo $item['id']; ?>" class="btn btn-warning btn-sm">
                                     <i class="bi bi-pencil-square"></i> Edit
                                 </a>
-                                <a href="index.php?controller=siswa&action=hapus&id=<?php echo $item['id']; ?>" class="btn btn-danger btn-sm delete-button">
+                                <a href="?controller=siswa&action=hapus&id=<?php echo $item['id']; ?>" class="btn btn-danger btn-sm delete-button">
                                     <i class="bi bi-trash-fill"></i> Hapus
                                 </a>
                             </td>

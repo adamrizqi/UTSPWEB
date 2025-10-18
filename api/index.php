@@ -1,7 +1,7 @@
 <?php
 session_start(); 
 
-define('BASE_PATH', __DIR__);
+define('BASE_PATH', dirname(__DIR__));
 
 require_once BASE_PATH . '/app/database.php';
 require_once BASE_PATH . '/app/helpers/flash_message_helper.php';

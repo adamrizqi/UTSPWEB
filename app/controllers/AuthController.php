@@ -22,31 +22,31 @@ class AuthController {
             $_SESSION['user_id'] = $userLogin['id'];
             $_SESSION['nama_lengkap'] = $userLogin['nama_lengkap'];
             
-            $redirectUrl = 'index.php?controller=siswa&action=dashboard';
+            $redirectUrl = '?controller=siswa&action=dashboard';
             setRedirectFlashMessage('success', 'Login Berhasil!', 'Selamat datang kembali, ' . $userLogin['nama_lengkap'], $redirectUrl);
             
-            $this->redirect('index.php?controller=auth&action=showMessage');
+            $this->redirect('?controller=auth&action=showMessage');
         } else {
             setFlashMessage('error', 'Login Gagal', 'Username atau password yang Anda masukkan salah.');
-            $this->redirect('index.php?controller=auth&action=formLogin');
+            $this->redirect('?controller=auth&action=formLogin');
         }
     }
 
     public function prosesRegister() {
         if ($this->userModel->registerUser($_POST)) {
-            $redirectUrl = 'index.php?controller=auth&action=formLogin';
+            $redirectUrl = '?controller=auth&action=formLogin';
             setRedirectFlashMessage('success', 'Registrasi Berhasil', 'Akun Anda telah dibuat. Silakan login.', $redirectUrl);
             
-            $this->redirect('index.php?controller=auth&action=showMessage');
+            $this->redirect('?controller=auth&action=showMessage');
         } else {
             setFlashMessage('error', 'Registrasi Gagal', 'Username mungkin sudah terdaftar atau terjadi kesalahan.');
-            $this->redirect('index.php?controller=auth&action=formRegister');
+            $this->redirect('?controller=auth&action=formRegister');
         }
     }
 
     public function keluar() {
         session_destroy();
-        $this->redirect('index.php?controller=auth&action=formLogin');
+        $this->redirect('?controller=auth&action=formLogin');
     }
 
     public function showMessage() {
@@ -65,7 +65,7 @@ class AuthController {
 
     public function updateProfile() {
         if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-            $this->redirect('index.php?controller=auth&action=profile');
+            $this->redirect('?controller=auth&action=profile');
         }
 
         $id = $_SESSION['user_id'];
@@ -79,11 +79,11 @@ class AuthController {
 
             if (!$user) {
                 setFlashMessage('error', 'Gagal!', 'Password lama yang Anda masukkan salah.');
-                $this->redirect('index.php?controller=auth&action=profile');
+                $this->redirect('?controller=auth&action=profile');
             }
             if (empty($_POST['password_baru']) || $_POST['password_baru'] !== $_POST['konfirmasi_password']) {
                 setFlashMessage('error', 'Gagal!', 'Password baru dan konfirmasi tidak cocok.');
-                $this->redirect('index.php?controller=auth&action=profile');
+                $this->redirect('?controller=auth&action=profile');
             }
 
             $dataToUpdate['password'] = $_POST['password_baru'];
@@ -96,6 +96,6 @@ class AuthController {
             setFlashMessage('error', 'Gagal!', 'Terjadi kesalahan saat memperbarui profil.');
         }
         
-        $this->redirect('index.php?controller=auth&action=profile');
+        $this->redirect('?controller=auth&action=profile');
     }
 }
