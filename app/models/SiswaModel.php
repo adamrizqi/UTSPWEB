@@ -38,11 +38,18 @@ class SiswaModel {
 
     public function cari($limit, $offset, $keyword = '', $kelas = '') {
         $queryParts = $this->buildQueryParts($keyword, $kelas);
+        
+        // Query tanpa LIMIT/OFFSET untuk binding
         $sql = "SELECT id, nis, nama_lengkap, kelas, foto FROM siswa" . $queryParts['where'];
+        
+        // Sisipkan LIMIT/OFFSET setelah binding selesai (Ini yang menyebabkan data muncul)
         $sql .= " ORDER BY kelas, nama_lengkap LIMIT " . (int)$limit . " OFFSET " . (int)$offset;
 
         $stmt = $this->pdo->prepare($sql);
+        
+        // Kirim hanya parameter WHERE clause ke execute()
         $stmt->execute($queryParts['params']);
+        
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
