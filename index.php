@@ -1,7 +1,7 @@
 <?php
 session_start(); 
 
-define('BASE_PATH', dirname(__DIR__));
+define('BASE_PATH', __DIR__);
 
 require_once BASE_PATH . '/app/database.php';
 require_once BASE_PATH . '/app/helpers/flash_message_helper.php';
@@ -26,3 +26,4 @@ if (class_exists($namaController)) {
 } else {
     die("Error: Controller '{$namaController}' tidak ditemukan.");
 }
+?>
