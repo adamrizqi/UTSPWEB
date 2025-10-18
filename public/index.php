@@ -1,15 +1,17 @@
 <?php
 session_start(); 
 
-require_once '../app/database.php';
-require_once '../app/helpers/flash_message_helper.php';
-require_once '../app/models/UserModel.php';
-require_once '../app/models/SiswaModel.php';
-require_once '../app/controllers/AuthController.php';
-require_once '../app/controllers/SiswaController.php';
+define('BASE_PATH', dirname(__DIR__));
+
+require_once BASE_PATH . '/app/database.php';
+require_once BASE_PATH . '/app/helpers/flash_message_helper.php';
+require_once BASE_PATH . '/app/models/UserModel.php';
+require_once BASE_PATH . '/app/models/SiswaModel.php';
+require_once BASE_PATH . '/app/controllers/AuthController.php';
+require_once BASE_PATH . '/app/controllers/SiswaController.php';
 
 $controller = $_GET['controller'] ?? 'auth'; 
-$aksi = $_GET['action'] ?? 'formLogin';      
+$aksi = $_GET['action'] ?? 'formLogin';       
 
 $namaController = ucfirst($controller) . 'Controller';
 
