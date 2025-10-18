@@ -25,7 +25,7 @@ class SiswaController {
     }
 
     public function daftar() {
-        $limit = 10; 
+        $limit = 7; 
         $halaman = isset($_GET['halaman']) ? (int)$_GET['halaman'] : 1;
         $offset = ($halaman - 1) * $limit;
         
