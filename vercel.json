@@ -1,18 +1,5 @@
 {
-  "version": 2,
-  "functions": {
-    "public/index.php": {
-      "runtime": "vercel-php@0.6.0"
-    }
-  },
-  "routes": [
-    {
-      "src": "/(css|js)/(.*)",
-      "dest": "/public/$1/$2"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/public/index.php"
-    }
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/public/index.php" }
   ]
 }
