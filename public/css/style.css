@@ -1,0 +1,121 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #00292d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 1rem;
+}
+
+.auth-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    max-width: 700px; 
+    min-height: 480px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    border-radius: 1.5rem;
+    overflow: hidden;
+    background-color: #35b3a8;
+}
+
+.illustration-section {
+    background-image: url('https://static.vecteezy.com/system/resources/previews/000/472/519/non_2x/school-and-learning-illustration-vector.jpg');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.form-section {
+    background-color: #F4B942;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.form-container {
+    width: 100%;
+    max-width: 250px;
+}
+
+.auth-card {
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    border: none;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.form-header small {
+    color: #c79a36;
+    font-weight: 600;
+    letter-spacing: 1px;
+    font-size: 0.8rem;
+}
+
+.form-control {
+    border: 1px solid #e9ecef;
+    border-radius: 0.5rem;
+    padding: 0.7rem 1rem; 
+    background-color: #f8f9fa;
+    font-size: 0.9rem;
+}
+.form-control:focus {
+    box-shadow: none;
+    border-color: #2F4858;
+}
+
+.btn-custom {
+    background-color: #2F4858;
+    color: #fff;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.65rem; 
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+.btn-custom:hover {
+    background-color: #1e303a;
+}
+
+.auth-link {
+    font-weight: 500;
+}
+.auth-link small {
+    color: white;
+}
+.auth-link a {
+    color: #2F4858;
+    font-weight: 700;
+    text-decoration: none;
+}
+.auth-link a:hover {
+    text-decoration: underline;
+}
+
+.form-section--register {
+    background-color: #2F4858;
+}
+.form-section--register .form-header small,
+.form-section--register .auth-link a {
+    color: #F4B942;
+}
+.form-section--register .btn-custom {
+    background-color: #F4B942;
+}
+.form-section--register .btn-custom:hover {
+    background-color: #d19a2e;
+}
+
+@media (max-width: 768px) {
+    .auth-wrapper {
+        grid-template-columns: 1fr;
+        min-height: auto;
+    }
+    .illustration-section {
+        display: none;
+    }
+}
