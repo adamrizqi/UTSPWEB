@@ -8,11 +8,11 @@ class AuthController {
     }
 
     public function formLogin() {
-        require_once '../app/views/auth/login.php'; 
+        require_once BASE_PATH . '/app/views/auth/login.php';
     }
 
     public function formRegister() {
-        require_once '../app/views/auth/register.php'; 
+        require_once BASE_PATH . '/app/views/auth/register.php';
     }
 
     public function prosesLogin() {
@@ -50,7 +50,7 @@ class AuthController {
     }
 
     public function showMessage() {
-        require_once '../app/views/layouts/message.php';
+        require_once BASE_PATH . '/app/views/layouts/message.php';
     }
 
     private function redirect($url) {
@@ -60,7 +60,7 @@ class AuthController {
 
     public function profile() {
         $dataUser = $this->userModel->findUserById($_SESSION['user_id']);
-        require_once '../app/views/auth/profile.php';
+        require_once BASE_PATH . '/app/views/auth/profile.php';
     }
 
     public function updateProfile() {

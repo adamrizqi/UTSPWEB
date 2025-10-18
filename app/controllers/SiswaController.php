@@ -21,7 +21,7 @@ class SiswaController {
             $chartData[] = $data['jumlah'];
         }
 
-        require_once '../app/views/siswa/dashboard.php';
+        require_once BASE_PATH . '/app/views/siswa/dashboard.php';
     }
 
     public function daftar() {
@@ -38,17 +38,17 @@ class SiswaController {
 
         $daftarSiswa = $this->modelSiswa->cari($limit, $offset, $keyword, $kelasTerpilih);
         
-        require_once '../app/views/siswa/list.php';
+        require_once BASE_PATH . '/app/views/siswa/list.php';
     }
 
     public function formTambah() {
-        require_once '../app/views/siswa/form.php';
+        require_once BASE_PATH . '/app/views/siswa/form.php';
     }
 
     public function formEdit() {
         $idSiswa = $_GET['id'];
         $dataSiswa = $this->modelSiswa->cariBerdasarkanId($idSiswa);
-        require_once '../app/views/siswa/form.php';
+        require_once BASE_PATH . '/app/views/siswa/form.php';
     }
 
     public function simpan() {
@@ -103,7 +103,7 @@ class SiswaController {
     }
 
     public function showMessage() {
-        require_once '../app/views/layouts/message.php';
+        require_once BASE_PATH . '/app/views/layouts/message.php';
     }
 
     private function redirect($url) {
